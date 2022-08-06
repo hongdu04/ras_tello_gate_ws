@@ -1,0 +1,64 @@
+[0.000000] (-) TimerEvent: {}
+[0.000328] (tello_test) JobQueued: {'identifier': 'tello_test', 'dependencies': OrderedDict()}
+[0.000355] (tello_test) JobStarted: {'identifier': 'tello_test'}
+[0.099832] (-) TimerEvent: {}
+[0.200184] (-) TimerEvent: {}
+[0.300512] (-) TimerEvent: {}
+[0.400833] (-) TimerEvent: {}
+[0.501151] (-) TimerEvent: {}
+[0.601488] (-) TimerEvent: {}
+[0.701739] (-) TimerEvent: {}
+[0.802079] (-) TimerEvent: {}
+[0.902303] (-) TimerEvent: {}
+[1.002630] (-) TimerEvent: {}
+[1.102865] (-) TimerEvent: {}
+[1.123483] (tello_test) Command: {'cmd': ['/usr/bin/python3', 'setup.py', 'egg_info', '--egg-base', '../../build/tello_test', 'build', '--build-base', '/home/honghao/ras_tello_ws/build/tello_test/build', 'install', '--prefix', '/home/honghao/ras_tello_ws/install/tello_test', '--record', '/home/honghao/ras_tello_ws/build/tello_test/install.log', '--single-version-externally-managed'], 'cwd': '/home/honghao/ras_tello_ws/src/tello_test', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'honghao', 'LC_TIME': 'en_US.UTF-8', 'SSH_AGENT_PID': '1720', 'XDG_SESSION_TYPE': 'x11', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/honghao/tello_ros_ws/install/tello_gazebo/lib:/home/honghao/tello_ros_ws/install/tello_driver/lib:/home/honghao/tello_ros_ws/install/tello_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins', 'HOME': '/home/honghao', 'OLDPWD': '/home/honghao/ras_tello_ws/src', 'DESKTOP_SESSION': 'ubuntu', 'GAZEBO_MASTER_URI': 'http://localhost:11345', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'LC_MONETARY': 'en_US.UTF-8', 'MANAGERPID': '1533', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'TERMINATOR_DBUS_NAME': 'net.tenshu.Terminator21a9d5db22c73a993ff0b42f64b396873', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '8538', 'IM_CONFIG_PHASE': '1', 'COLCON_PREFIX_PATH': '/home/honghao/tello_ros_ws/install', 'ROS_DISTRO': 'foxy', 'LOGNAME': 'honghao', 'JOURNAL_STREAM': '8:56508', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'honghao', 'TERM': 'xterm-256color', 'GAZEBO_MODEL_PATH': '/usr/share/gazebo-11/models:/home/honghao/tello_ros_ws/install/tello_gazebo/share/tello_gazebo/models', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'ROS_LOCALHOST_ONLY': '0', 'WINDOWPATH': '2', 'OGRE_RESOURCE_PATH': '/usr/lib/x86_64-linux-gnu/OGRE-1.9.0', 'PATH': '/opt/ros/foxy/bin:/home/honghao/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'SESSION_MANAGER': 'local/hongdu:@/tmp/.ICE-unix/1758,unix/hongdu:/tmp/.ICE-unix/1758', 'INVOCATION_ID': '14436f2f66ab4da69ddd588183d3453d', 'PAPERSIZE': 'letter', 'XDG_MENU_PREFIX': 'gnome-', 'LC_ADDRESS': 'en_US.UTF-8', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'TERMINATOR_DBUS_PATH': '/net/tenshu/Terminator2', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'LC_TELEPHONE': 'en_US.UTF-8', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/honghao/tello_ros_ws/install/tello_gazebo:/home/honghao/tello_ros_ws/install/tello_driver:/home/honghao/tello_ros_ws/install/tello_msgs:/home/honghao/tello_ros_ws/install/tello_description:/home/honghao/tello_ros_ws/install/ros2_shared:/opt/ros/foxy', 'SHELL': '/bin/bash', 'LC_NAME': 'en_US.UTF-8', 'TERMINATOR_UUID': 'urn:uuid:98e5826f-bbcc-4ac6-93b0-afb9abc3949c', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_MEASUREMENT': 'en_US.UTF-8', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'GAZEBO_RESOURCE_PATH': '/usr/share/gazebo-11:', 'LC_IDENTIFICATION': 'en_US.UTF-8', 'GAZEBO_MODEL_DATABASE_URI': 'http://models.gazebosim.org', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/honghao/ras_tello_ws/build/tello_test', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'GAZEBO_PLUGIN_PATH': '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/honghao/ras_tello_ws/install/tello_test/lib/python3.8/site-packages:/home/honghao/tello_ros_ws/install/tello_msgs/lib/python3.8/site-packages:/opt/ros/foxy/lib/python3.8/site-packages', 'LC_NUMERIC': 'en_US.UTF-8', 'LC_PAPER': 'en_US.UTF-8', 'COLCON': '1', 'VTE_VERSION': '6003', 'CMAKE_PREFIX_PATH': '/home/honghao/tello_ros_ws/install/tello_gazebo:/home/honghao/tello_ros_ws/install/tello_driver:/home/honghao/tello_ros_ws/install/tello_msgs:/home/honghao/tello_ros_ws/install/tello_description:/home/honghao/tello_ros_ws/install/ros2_shared'}, 'shell': False}
+[1.202991] (-) TimerEvent: {}
+[1.296397] (tello_test) StderrLine: {'line': b"/home/honghao/.local/lib/python3.8/site-packages/setuptools/dist.py:757: UserWarning: Usage of dash-separated 'script-dir' will not be supported in future versions. Please use the underscore name 'script_dir' instead\n"}
+[1.296610] (tello_test) StderrLine: {'line': b'  warnings.warn(\n'}
+[1.296666] (tello_test) StderrLine: {'line': b"/home/honghao/.local/lib/python3.8/site-packages/setuptools/dist.py:757: UserWarning: Usage of dash-separated 'install-scripts' will not be supported in future versions. Please use the underscore name 'install_scripts' instead\n"}
+[1.296715] (tello_test) StderrLine: {'line': b'  warnings.warn(\n'}
+[1.303162] (-) TimerEvent: {}
+[1.403414] (-) TimerEvent: {}
+[1.503747] (-) TimerEvent: {}
+[1.604006] (-) TimerEvent: {}
+[1.665409] (tello_test) StdoutLine: {'line': b'running egg_info\n'}
+[1.665866] (tello_test) StdoutLine: {'line': b'creating ../../build/tello_test/tello_test.egg-info\n'}
+[1.703453] (tello_test) StdoutLine: {'line': b'writing ../../build/tello_test/tello_test.egg-info/PKG-INFO\n'}
+[1.711959] (-) TimerEvent: {}
+[1.742404] (tello_test) StdoutLine: {'line': b'writing dependency_links to ../../build/tello_test/tello_test.egg-info/dependency_links.txt\n'}
+[1.812145] (-) TimerEvent: {}
+[1.891709] (tello_test) StdoutLine: {'line': b'writing requirements to ../../build/tello_test/tello_test.egg-info/requires.txt\n'}
+[1.912305] (-) TimerEvent: {}
+[1.920891] (tello_test) StdoutLine: {'line': b'writing top-level names to ../../build/tello_test/tello_test.egg-info/top_level.txt\n'}
+[1.922136] (tello_test) StdoutLine: {'line': b"writing manifest file '../../build/tello_test/tello_test.egg-info/SOURCES.txt'\n"}
+[1.974739] (tello_test) StdoutLine: {'line': b"reading manifest file '../../build/tello_test/tello_test.egg-info/SOURCES.txt'\n"}
+[1.975179] (tello_test) StdoutLine: {'line': b"writing manifest file '../../build/tello_test/tello_test.egg-info/SOURCES.txt'\n"}
+[1.975242] (tello_test) StdoutLine: {'line': b'running build\n'}
+[1.975304] (tello_test) StdoutLine: {'line': b'running build_py\n'}
+[1.975360] (tello_test) StdoutLine: {'line': b'creating /home/honghao/ras_tello_ws/build/tello_test/build\n'}
+[1.975432] (tello_test) StdoutLine: {'line': b'creating /home/honghao/ras_tello_ws/build/tello_test/build/lib\n'}
+[1.975489] (tello_test) StdoutLine: {'line': b'creating /home/honghao/ras_tello_ws/build/tello_test/build/lib/tello_test\n'}
+[1.975534] (tello_test) StdoutLine: {'line': b'copying tello_test/__init__.py -> /home/honghao/ras_tello_ws/build/tello_test/build/lib/tello_test\n'}
+[1.975591] (tello_test) StdoutLine: {'line': b'running install\n'}
+[1.975680] (tello_test) StderrLine: {'line': b'/home/honghao/.local/lib/python3.8/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.\n'}
+[1.975724] (tello_test) StderrLine: {'line': b'  warnings.warn(\n'}
+[1.979577] (tello_test) StdoutLine: {'line': b'running install_lib\n'}
+[2.012486] (-) TimerEvent: {}
+[2.016422] (tello_test) StdoutLine: {'line': b'creating /home/honghao/ras_tello_ws/install/tello_test/lib/python3.8/site-packages/tello_test\n'}
+[2.016547] (tello_test) StdoutLine: {'line': b'copying /home/honghao/ras_tello_ws/build/tello_test/build/lib/tello_test/__init__.py -> /home/honghao/ras_tello_ws/install/tello_test/lib/python3.8/site-packages/tello_test\n'}
+[2.016777] (tello_test) StdoutLine: {'line': b'byte-compiling /home/honghao/ras_tello_ws/install/tello_test/lib/python3.8/site-packages/tello_test/__init__.py to __init__.cpython-38.pyc\n'}
+[2.016871] (tello_test) StdoutLine: {'line': b'running install_data\n'}
+[2.025752] (tello_test) StdoutLine: {'line': b'creating /home/honghao/ras_tello_ws/install/tello_test/share/ament_index\n'}
+[2.025972] (tello_test) StdoutLine: {'line': b'creating /home/honghao/ras_tello_ws/install/tello_test/share/ament_index/resource_index\n'}
+[2.026020] (tello_test) StdoutLine: {'line': b'creating /home/honghao/ras_tello_ws/install/tello_test/share/ament_index/resource_index/packages\n'}
+[2.026060] (tello_test) StdoutLine: {'line': b'copying resource/tello_test -> /home/honghao/ras_tello_ws/install/tello_test/share/ament_index/resource_index/packages\n'}
+[2.026098] (tello_test) StdoutLine: {'line': b'copying package.xml -> /home/honghao/ras_tello_ws/install/tello_test/share/tello_test\n'}
+[2.026135] (tello_test) StdoutLine: {'line': b'running install_egg_info\n'}
+[2.068987] (tello_test) StdoutLine: {'line': b'Copying ../../build/tello_test/tello_test.egg-info to /home/honghao/ras_tello_ws/install/tello_test/lib/python3.8/site-packages/tello_test-0.0.0-py3.8.egg-info\n'}
+[2.069407] (tello_test) StdoutLine: {'line': b'running install_scripts\n'}
+[2.112662] (-) TimerEvent: {}
+[2.138944] (tello_test) StdoutLine: {'line': b"writing list of installed files to '/home/honghao/ras_tello_ws/build/tello_test/install.log'\n"}
+[2.160184] (tello_test) CommandEnded: {'returncode': 0}
+[2.167000] (tello_test) JobEnded: {'identifier': 'tello_test', 'rc': 0}
+[2.167540] (-) EventReactorShutdown: {}

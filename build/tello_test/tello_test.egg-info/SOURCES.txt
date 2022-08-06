@@ -1,0 +1,14 @@
+package.xml
+setup.cfg
+setup.py
+../../build/tello_test/tello_test.egg-info/PKG-INFO
+../../build/tello_test/tello_test.egg-info/SOURCES.txt
+../../build/tello_test/tello_test.egg-info/dependency_links.txt
+../../build/tello_test/tello_test.egg-info/requires.txt
+../../build/tello_test/tello_test.egg-info/top_level.txt
+../../build/tello_test/tello_test.egg-info/zip-safe
+resource/tello_test
+tello_test/__init__.py
+test/test_copyright.py
+test/test_flake8.py
+test/test_pep257.py

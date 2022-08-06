@@ -1,0 +1,36 @@
+/home/honghao/.local/lib/python3.8/site-packages/setuptools/dist.py:757: UserWarning: Usage of dash-separated 'script-dir' will not be supported in future versions. Please use the underscore name 'script_dir' instead
+  warnings.warn(
+/home/honghao/.local/lib/python3.8/site-packages/setuptools/dist.py:757: UserWarning: Usage of dash-separated 'install-scripts' will not be supported in future versions. Please use the underscore name 'install_scripts' instead
+  warnings.warn(
+running egg_info
+creating ../../build/tello_test/tello_test.egg-info
+writing ../../build/tello_test/tello_test.egg-info/PKG-INFO
+writing dependency_links to ../../build/tello_test/tello_test.egg-info/dependency_links.txt
+writing requirements to ../../build/tello_test/tello_test.egg-info/requires.txt
+writing top-level names to ../../build/tello_test/tello_test.egg-info/top_level.txt
+writing manifest file '../../build/tello_test/tello_test.egg-info/SOURCES.txt'
+reading manifest file '../../build/tello_test/tello_test.egg-info/SOURCES.txt'
+writing manifest file '../../build/tello_test/tello_test.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/honghao/ras_tello_ws/build/tello_test/build
+creating /home/honghao/ras_tello_ws/build/tello_test/build/lib
+creating /home/honghao/ras_tello_ws/build/tello_test/build/lib/tello_test
+copying tello_test/__init__.py -> /home/honghao/ras_tello_ws/build/tello_test/build/lib/tello_test
+running install
+/home/honghao/.local/lib/python3.8/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+  warnings.warn(
+running install_lib
+creating /home/honghao/ras_tello_ws/install/tello_test/lib/python3.8/site-packages/tello_test
+copying /home/honghao/ras_tello_ws/build/tello_test/build/lib/tello_test/__init__.py -> /home/honghao/ras_tello_ws/install/tello_test/lib/python3.8/site-packages/tello_test
+byte-compiling /home/honghao/ras_tello_ws/install/tello_test/lib/python3.8/site-packages/tello_test/__init__.py to __init__.cpython-38.pyc
+running install_data
+creating /home/honghao/ras_tello_ws/install/tello_test/share/ament_index
+creating /home/honghao/ras_tello_ws/install/tello_test/share/ament_index/resource_index
+creating /home/honghao/ras_tello_ws/install/tello_test/share/ament_index/resource_index/packages
+copying resource/tello_test -> /home/honghao/ras_tello_ws/install/tello_test/share/ament_index/resource_index/packages
+copying package.xml -> /home/honghao/ras_tello_ws/install/tello_test/share/tello_test
+running install_egg_info
+Copying ../../build/tello_test/tello_test.egg-info to /home/honghao/ras_tello_ws/install/tello_test/lib/python3.8/site-packages/tello_test-0.0.0-py3.8.egg-info
+running install_scripts
+writing list of installed files to '/home/honghao/ras_tello_ws/build/tello_test/install.log'

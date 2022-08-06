@@ -1,0 +1,17 @@
+running egg_info
+writing ../../build/tello_test/tello_test.egg-info/PKG-INFO
+writing dependency_links to ../../build/tello_test/tello_test.egg-info/dependency_links.txt
+writing requirements to ../../build/tello_test/tello_test.egg-info/requires.txt
+writing top-level names to ../../build/tello_test/tello_test.egg-info/top_level.txt
+reading manifest file '../../build/tello_test/tello_test.egg-info/SOURCES.txt'
+writing manifest file '../../build/tello_test/tello_test.egg-info/SOURCES.txt'
+running build
+running build_py
+running install
+running install_lib
+running install_data
+running install_egg_info
+removing '/home/honghao/ras_tello_ws/install/tello_test/lib/python3.8/site-packages/tello_test-0.0.0-py3.8.egg-info' (and everything under it)
+Copying ../../build/tello_test/tello_test.egg-info to /home/honghao/ras_tello_ws/install/tello_test/lib/python3.8/site-packages/tello_test-0.0.0-py3.8.egg-info
+running install_scripts
+writing list of installed files to '/home/honghao/ras_tello_ws/build/tello_test/install.log'
