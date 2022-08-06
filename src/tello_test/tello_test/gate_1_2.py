@@ -10,18 +10,18 @@ import argparse
 import cv2
 import sys
 
-class RAS_Tello_ARUCO_GATE(Node):
+class RAS_Tello_Fiducials_FullGreen(Node):
     def __init__(self):
-        super().__init__('aruco_gate')
+        super().__init__('gate_1_2')
 
         self.subscription = self.create_subscription(
             Image,
-            '/image_raw',
+            '/drone1/image_raw',
             self.image_callback,
             10
         )
 
-        self.publisher_ = self.create_publisher(Twist, '/cmd_vel', 10)
+        self.publisher_ = self.create_publisher(Twist, '/drone1/cmd_vel', 10)
 
         self.cX1 = 0
         self.cY1 = 0
@@ -31,8 +31,9 @@ class RAS_Tello_ARUCO_GATE(Node):
         self.cY3 = 0
         self.cX4 = 0
         self.cY4 = 0
-        
+
     def image_callback(self, msg):
+
         self.ap = argparse.ArgumentParser()
         self.ap.add_argument("-t", "--type", type=str, default="DICT_4X4_100", help="type of ArUCo tag to detect")
         self.args = vars(self.ap.parse_args())
@@ -132,24 +133,6 @@ class RAS_Tello_ARUCO_GATE(Node):
         cY_diff = cY_frame - cY_center
         cv2.putText(self.frame, "(X error: {}, Y error: {})".format(cX_diff, cY_diff), (cX_frame + 30, cY_frame + 30), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 2)
 
-        # align X and Y coordinates of the ArUco marker with the center of the frame
-        if cX_diff < -5:
-            self.tello_move_right() 
-        elif cX_diff > 5:
-            self.tello_move_left()
-
-        if cY_diff < -5:
-            self.tello_move_down()
-        elif cY_diff > 5:
-            self.tello_move_up()
-        
-        if cX_center in range(cX_frame - 5, cX_frame + 5) and cY_center in range(cY_frame - 5, cY_frame + 5):
-            while 1:
-                for i in range(20):
-                    self.tello_move_down()
-                for i in range(2000):
-                    self.tello_move_forward()
-
         # show the frame
         cv2.imshow("Frame", self.frame)
         cv2.waitKey(1)
@@ -170,7 +153,7 @@ class RAS_Tello_ARUCO_GATE(Node):
             cv2_img = cv2_img.byteswap().newbyteorder()
 
         return cv2_img
-    
+
     def tello_move_forward(self):
         msg          = Twist()
         msg.linear.x = 0.2
@@ -215,9 +198,9 @@ class RAS_Tello_ARUCO_GATE(Node):
 
 def main(args=None):
     rclpy.init(args=args)
-    aruco_gate = RAS_Tello_ARUCO_GATE()
-    rclpy.spin(aruco_gate)
-    aruco_gate.destroy_node()
+    gate_1_2 = RAS_Tello_Fiducials_FullGreen()
+    rclpy.spin(gate_1_2)
+    gate_1_2.destroy_node()
     rclpy.shutdown()
 
 if __name__ == '__main__':

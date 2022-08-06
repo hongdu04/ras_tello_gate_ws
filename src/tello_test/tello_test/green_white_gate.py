@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 
 class RAS_Tello_GREEN_GATE(Node):
     def __init__(self):
-        super().__init__('green_gate')
+        super().__init__('green_white_gate')
 
         self.subscription = self.create_subscription(
             Image,
@@ -32,9 +32,9 @@ class RAS_Tello_GREEN_GATE(Node):
         # green
         lower_boundary1 = [40, 80, 60]
         upper_boundary1 = [60, 200, 255]
-        lower1 = np.array(lower_boundary1, dtype="uint8")
-        upper1 = np.array(upper_boundary1, dtype="uint8")
-        mask = cv2.inRange(hsv, lower1, upper1)
+        lower1          = np.array(lower_boundary1, dtype="uint8")
+        upper1          = np.array(upper_boundary1, dtype="uint8")
+        mask            = cv2.inRange(hsv, lower1, upper1)
 
         color_detected = cv2.bitwise_and(self.frame, self.frame, mask=mask)
 
@@ -62,29 +62,33 @@ class RAS_Tello_GREEN_GATE(Node):
         y_center = gate_center[1]
         
         # center coordinates of the frame (H, W) = (720, 960)
-        cX_frame = 240
-        cY_frame = self.frame.shape[0] // 2
+        cX_frame = 480
+        cY_frame = 225
         cv2.circle(self.frame, (cX_frame, cY_frame), 4, (0, 0, 255), -1)
         cv2.putText(self.frame, "camera: ({}, {})".format(cX_frame, cY_frame), (cX_frame - 15, cY_frame - 15), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 2)
 
-        # align X and Y coordinates of the ArUco marker with the center of the frame 
-        if y_center < (cY_frame - 10):
-            self.tello_move_up()
-        elif y_center > (cY_frame + 10):
-            self.tello_move_down()
-        # else:
-        #     self.tello_vertical_stop()
+        # align the center of the frame with the center of the ArUco marker
+        cX_diff = cX_frame - x_center
+        cY_diff = cY_frame - y_center
+        cv2.putText(self.frame, "(X error: {}, Y error: {})".format(cX_diff, cY_diff), (cX_frame + 30, cY_frame + 30), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 2)
 
-        if x_center > (cX_frame - 10):
+        # align X and Y coordinates of the ArUco marker with the center of the frame
+        if cX_diff < -5:
             self.tello_rotate_right()
-        elif x_center < (cX_frame + 10):
+        elif cX_diff > 5:
             self.tello_rotate_left()
-        # else:
-        #     self.tello_horizontal_stop()
+
+        if cY_diff < -5:
+            self.tello_move_down()
+        elif cY_diff > 5:
+            self.tello_move_up()
         
-        if x_center in range(cX_frame - 10, cX_frame + 10) and y_center in range(cY_frame - 10, cY_frame + 10):
+        if x_center in range(cX_frame - 5, cX_frame + 5) and y_center in range(cY_frame - 5, cY_frame + 5):
             while 1:
-                self.tello_move_forward()
+                for i in range(20):
+                    self.tello_move_down()
+                for i in range(2000):
+                    self.tello_move_forward()
 
         cv2.imshow("Frame", self.frame[:, :, ::-1])
         cv2.waitKey(1)
@@ -107,43 +111,43 @@ class RAS_Tello_GREEN_GATE(Node):
         return cv2_img
     
     def tello_move_forward(self):
-        msg = Twist()
+        msg          = Twist()
         msg.linear.x = 0.2
         self.publisher_.publish(msg)
-        print("[INFO] move forward")
+        print("[INFO] Tello move forward")
     
     def tello_move_left(self):
-        msg = Twist()
+        msg          = Twist()
         msg.linear.y = 0.1
         self.publisher_.publish(msg)
         print("[INFO] Tello move left")
     
     def tello_move_right(self):
-        msg = Twist()
+        msg          = Twist()
         msg.linear.y = -0.1
         self.publisher_.publish(msg)
         print("[INFO] Tello move right")
     
     def tello_move_down(self):
-        msg = Twist()
+        msg          = Twist()
         msg.linear.z = -0.1
         self.publisher_.publish(msg)
         print("[INFO] Tello move down")
     
     def tello_move_up(self):
-        msg = Twist()
+        msg          = Twist()
         msg.linear.z = 0.1
         self.publisher_.publish(msg)
         print("[INFO] Tello move up")
     
     def tello_rotate_left(self):
-        msg = Twist()
+        msg           = Twist()
         msg.angular.z = 0.1
         self.publisher_.publish(msg)
         print("[INFO] Tello rotate left")
     
     def tello_rotate_right(self):
-        msg = Twist()
+        msg           = Twist()
         msg.angular.z = -0.1
         self.publisher_.publish(msg)
         print("[INFO] Tello rotate right")
