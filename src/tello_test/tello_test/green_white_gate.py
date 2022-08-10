@@ -63,7 +63,7 @@ class RAS_Tello_GREEN_GATE(Node):
         
         # center coordinates of the frame (H, W) = (720, 960)
         cX_frame = 480
-        cY_frame = 225
+        cY_frame = 360
         cv2.circle(self.frame, (cX_frame, cY_frame), 4, (0, 0, 255), -1)
         cv2.putText(self.frame, "camera: ({}, {})".format(cX_frame, cY_frame), (cX_frame - 15, cY_frame - 15), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 2)
 
@@ -85,9 +85,6 @@ class RAS_Tello_GREEN_GATE(Node):
         
         if x_center in range(cX_frame - 5, cX_frame + 5) and y_center in range(cY_frame - 5, cY_frame + 5):
             while 1:
-                for i in range(20):
-                    self.tello_move_down()
-                for i in range(2000):
                     self.tello_move_forward()
 
         cv2.imshow("Frame", self.frame[:, :, ::-1])

@@ -122,7 +122,7 @@ class RAS_Tello_Fiducials_FullGreen(Node):
 
         # center coordinates of the frame (H, W) = (720, 960)
         cX_frame = 480
-        cY_frame = 225
+        cY_frame = 360
         cv2.circle(self.frame, (cX_frame, cY_frame), 4, (255, 0, 0), -1)
         cv2.putText(self.frame, "camera: ({}, {})".format(cX_frame, cY_frame), (cX_frame - 15, cY_frame - 15), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 2)
 
