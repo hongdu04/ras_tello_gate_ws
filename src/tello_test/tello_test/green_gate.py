@@ -81,9 +81,6 @@ class RAS_Tello_GREEN_GATE(Node):
         
         if x_center in range(cX_frame - 5, cX_frame + 5) and y_center in range(cY_frame - 5, cY_frame + 5):
             while 1:
-                for i in range(20):
-                    self.tello_move_down()
-                for i in range(2000):
                     self.tello_move_forward()
 
 
