@@ -16,7 +16,7 @@ class RAS_Tello_Fiducials_FullGreen(Node):
 
         self.subscription = self.create_subscription(
             Image,
-            '/drone1/image_raw',
+            '/image_raw',
             self.image_callback,
             10
         )
@@ -133,6 +133,50 @@ class RAS_Tello_Fiducials_FullGreen(Node):
         cY_diff = cY_frame - cY_center
         cv2.putText(self.frame, "(X error: {}, Y error: {})".format(cX_diff, cY_diff), (cX_frame + 30, cY_frame + 30), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 2)
 
+        index = -1
+
+        if len(corners)==0 :
+            if len(corners) == 0:
+                if index >= 0:
+                    # convert RGB to HSV
+                    hsv = cv2.cvtColor(self.frame, cv2.COLOR_BGR2HSV)
+                    # strucruring element
+                    # line = cv2.getStructuringElement(cv2.MORPH_RECT, (15, 15), (-1, -1))
+                    # HSV
+                    mask_green  = cv2.inRange(hsv, (35,43,46), (77,255,255))
+                    mask        = mask_green
+                    i=1
+                    # Contour extraction, find the largest contour
+                    contours, hierarchy = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+                    index = -1
+                    max   = 0
+                    for c in range(len(contours)):
+                        area = cv2.contourArea(contours[c])
+                        if area > max:
+                            max   = area
+                            index = c
+                    # pic
+                    if index >= 0:
+                        rect = cv2.minAreaRect(contours[index])
+                        # Ellipse Fitting
+                        cv2.ellipse(self.frame, rect, (0, 255, 0), 2, 8)
+                        # center point positioning of green gate
+                        x_center = np.int32(rect[0][0])  # the enter of x
+                        y_center = np.int32(rect[0][1])  # the center of y
+                        cv2.circle(self.frame, (np.int32(rect[0][0]), np.int32(rect[0][1])), 2, (0, 255, 0), 2, 8, 0)
+                        cv2.putText(self.frame, "gate center: ({}, {})".format(x_center, y_center), (x_center + 15, y_center + 15), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
+
+                    # center coordinates of the frame (H, W) = (720, 960)
+                    cX_frame = 480
+                    cY_frame = 360
+                    cv2.circle(self.frame, (cX_frame, cY_frame), 4, (0, 0, 255), -1)
+                    cv2.putText(self.frame, "camera: ({}, {})".format(cX_frame, cY_frame), (cX_frame - 15, cY_frame - 15), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 2)
+
+                    # align the center of the frame with the center of the ArUco marker
+                    cX_diff = cX_frame - x_center
+                    cY_diff = cY_frame - y_center
+                    cv2.putText(self.frame, "(X error: {}, Y error: {})".format(cX_diff, cY_diff), (cX_frame + 30, cY_frame + 30), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 2)
+
         # show the frame
         cv2.imshow("Frame", self.frame)
         cv2.waitKey(1)
@@ -180,7 +224,7 @@ class RAS_Tello_Fiducials_FullGreen(Node):
     
     def tello_move_up(self):
         msg          = Twist()
-        msg.linear.z = 0.1
+        msg.linear.z = 0.1  
         self.publisher_.publish(msg)
         print("[INFO] Tello move up")
     
