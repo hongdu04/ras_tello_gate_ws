@@ -85,7 +85,7 @@ class RAS_Tello_GREEN_GATE(Node):
         
         if x_center in range(cX_frame - 5, cX_frame + 5) and y_center in range(cY_frame - 5, cY_frame + 5):
             while 1:
-                    self.tello_move_forward()
+                self.tello_move_forward()
 
         cv2.imshow("Frame", self.frame[:, :, ::-1])
         cv2.waitKey(1)

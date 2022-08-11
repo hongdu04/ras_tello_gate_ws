@@ -145,7 +145,7 @@ class RAS_Tello_ARUCO_GATE(Node):
         
         if cX_center in range(cX_frame - 5, cX_frame + 5) and cY_center in range(cY_frame - 5, cY_frame + 5):
             while 1:
-                    self.tello_move_forward()
+                self.tello_move_forward()
 
         # show the frame
         cv2.imshow("Frame", self.frame)
